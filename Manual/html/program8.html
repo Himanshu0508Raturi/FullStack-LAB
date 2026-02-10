@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Lab Manual Program-8</title>
+</head>
+
+<body>
+    <header>
+        <h1>This is Header.</h1>
+    </header>
+    <nav>
+        <a href="#" target="_blank">Home</a>
+        <a href="#" target="_blank">Projects</a>
+        <a href="#" target="_blank">Academic</a>
+        <a href="#" target="_blank">About Me</a>
+    </nav>
+    <h3>Video element</h3>
+    <video controls autoplay loop muted width="250"
+        src="/video/Detailed_Google_Cloud_Computing_Foundations_Summary[1].mp4" alt="Video here"></video>
+    <h3>Audio element</h3>
+    <audio controls autoplay loop muted src="/audio/1.mpeg"></audio>
+    <h3>Embed Element</h3>
+    <embed type="image/jpg" src="/image/axis.png" width="250" height="150"></embed>
+    <h3>Datalist Element</h3>
+    <form>
+        <label for="browser">Choose your browser from the list:</label>
+        <input list="browser" name="browser" id="datalist-tag">
+        <datalist id="browser">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Google Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+    <h3>The bdi Element</h3>
+    <p>In the example below, usernames are shown along with the number of points in a contest. If the bdi element is not
+        supported in the browser, the username of the Arabic user would confuse the text (the bidirectional algorithm
+        would put the colon and the number "90" next to the word "User" rather than next to the word "points").</p>
+    <ul>
+        <li>User <bdi>hrefs</dbi>:60 points</li>
+        <li>User <bdi>jdoe</dbi>:80 points</li>
+        <li>User <bdi>إيان</dbi>:90 points</li>
+    </ul>
+    <h3>Article element</h3>
+    <article>
+        <h4>Google Chrome</h4>
+        <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web
+            browser today!</p>
+    </article>
+
+    <article>
+        <h4>Mozilla Firefox</h4>
+        <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second most popular
+            web browser since January, 2018.</p>
+    </article>
+    <h3>Output Element</h3>
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="range" id="a" value="50">
+        +<input type="number" id="b" value="25">
+        =<output name="x" for="a b"></output>
+    </form>
+    <footer>
+        &copy; All Right Reserved.
+    </footer>
+</body>
+</html>
