@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript1</title>
+</head>
+
+<body>
+    <label for="cname">Card Number:</label>
+    <input type="text" name="cname" id="cname" />
+    <br /><br />
+    <label for="res">Result:</label>
+    <input type="text" name="res" id="res" />
+    <br><br>
+    <button onclick="checkCard()">Submit</button>
+    <script>
+        function checkCard() {
+            const num = document.getElementById("cname").value.trim();
+            const len = num.length;
+
+            if (
+                (num.startsWith("51") ||
+                    num.startsWith("52") ||
+                    num.startsWith("53") ||
+                    num.startsWith("54") ||
+                    num.startsWith("55")) &&
+                len === 16
+            ) {
+                //   alert("Master Card");
+                document.getElementById("res").value = "Master Card";
+            } else if (num.startsWith("4") && (len === 13 || len === 16)) {
+                // alert("Visa");
+                document.getElementById("res").value = "Master Card";
+            } else if (
+                (num.startsWith("34") || num.startsWith("37")) &&
+                len === 15
+            ) {
+                // alert("American Express");
+                document.getElementById("res").value = "Master Card";
+            } else {
+                // alert("Invalid.");
+                document.getElementById("res").value = "Master Card";
+            }
+        }
+    </script>
+</body>
+
+</html>
