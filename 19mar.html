@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question-2</title>
+    <style>
+        body{
+            background-color: rgba(246, 255, 0, 0.608);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+        p{
+           color: gray;
+            /* border: 5px solid black; */
+        }
+        input{
+            background-color: black;
+            color: aliceblue;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <form align="center">
+        <fieldset>
+            <legend>Student Resgistration Form</legend>
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" /> <br />
+        <button onclick="validateName()" type="button">Validate</button>
+        <p id="res1"></p>
+        <br /><br />
+        <label for="mail">Enter Email:</label>
+        <input type="email" id="mail" />
+        <br />
+        <button onclick="validateEmail()" type="button">Validate</button>
+        <p id="res2"></p>
+        <br /><br />
+        <label for="pass">Enter Password:</label>
+        <input type="password" id="pass" />
+        <br />
+        <button onclick="validatePass()" type="button">Validate</button>
+        <p id="res3"></p>
+        <br /><br />
+    </form>
+    </fieldset>
+    <script>
+        function validateName() {
+            var val = document.getElementById("name").value;
+            var regex = /^[A-za-z ]+$/;
+            var res = regex.test(val);
+            // alert(res);
+            if (res == true) {
+                // alert(true);
+                document.getElementById("res1").innerHTML = "Valid";
+            } else {
+                document.getElementById("res1").innerHTML = "Invalid";
+            }
+        }
+        function validateEmail() {
+            var val = document.getElementById("mail").value;
+            var regex = /^\w+@\w+\.\w+$/;
+            var res = regex.test(val);
+            document.getElementById("res2").innerHTML = res ? "Valid" : "Invalid";
+        }
+        function validatePass() {
+            var val = document.getElementById("pass").value;
+            var regex =/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[a-z]).{8,}$/;
+            var res = regex.test(val);
+            if (res) {
+                document.getElementById("res3").innerHTML = "Valid";
+            } else {
+                document.getElementById("res3").innerHTML = "Invalid";
+            }
+        }
+    </script>
+</body>
+
+</html>
