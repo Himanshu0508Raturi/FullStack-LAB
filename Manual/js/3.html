@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program 3</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      select,
+      button {
+        padding: 10px;
+        margin: 10px;
+      }
+      .correct {
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Match country with capital.</h2>
+    <select id="country">
+      <option value="">Select Country</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+      <option value="Japan">Japan</option>
+    </select>
+    <br /><br />
+
+    <select id="capital">
+      <option value="">Select Capital</option>
+      <option value="New Delhi">New Delhi</option>
+      <option value="Washington DC">Washington DC</option>
+      <option value="London">London</option>
+      <option value="Tokyo">Tokyo</option>
+    </select>
+
+    <br /><br />
+
+    <button onclick="checkAnswer()">Check</button>
+    <p id="result"></p>
+
+    <script>
+      function checkAnswer() {
+        let country = document.getElementById("country").value.trim();
+        let capital = document.getElementById("capital").value.trim();
+        let result = document.getElementById("result");
+
+        let data = {
+          India: "New Delhi",
+          USA: "Washington D.C.",
+          UK: "London",
+          Japan: "Tokyo",
+        };
+
+        if (country === "" || capital === "") {
+          result.innerHTML = "Enter valid country and capital";
+          result.className = "error";
+          return;
+        }
+
+        if (data[country] === capital) {
+          result.innerHTML = "Correct Answer";
+          result.className = "correct";
+        } else {
+          result.innerHTML =
+            "Wrong answer. Correct capital of " +
+            country +
+            " is " +
+            data[country];
+          result.className = "error";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program 5</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 50px;
+      }
+      #content {
+        font-size: 22px;
+        font-weight: bold;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Self Modifying Webpage.</h2>
+    <div id="content">Page will update every minute.</div>
+    <script>
+      let message = [
+        "Welcome! Page will update every minute...",
+        "Keep learning, you're doing great!",
+        "JavaScript makes pages dynamic!",
+        "Time changes everything ⏳",
+        "Practice makes perfect!",
+      ];
+
+      let index = 0;
+      function updateContent(){
+        index = (index + 1) % message.length;
+        document.getElementById("content").innerHTML = message[index];
+      }
+      setInterval(updateContent , 60000);
+    </script>
+  </body>
+</html>

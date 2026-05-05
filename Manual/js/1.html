@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program 1</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        padding: 10px;
+        width: 250px;
+      }
+      button {
+        padding: 10px 20px;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Credit Card Validator.</h2>
+    <input type="text" id="cardNumber" placeholder="Enter card Number" />
+    <br /><br />
+    <button onclick="validateCard()">Validate</button>
+    <div id="result"></div>
+    <script>
+      function validateCard() {
+        let number = document.getElementById("cardNumber").value.trim();
+        let result = document.getElementById("result");
+
+        let length = number.length;
+
+        if (
+          length === 16 &&
+          (number.startsWith("51") ||
+            number.startsWith("52") ||
+            number.startsWith("53") ||
+            number.startsWith("54") ||
+            number.startsWith("55"))
+        ) {
+          result.innerHTML = "Valid Mastercard.";
+        } else if ((length === 13 || length === 16) && number.startsWith("4")) {
+          result.innerHTML = "Visa";
+        } else if (
+          length === 15 &&
+          (number.startsWith("34") || number.startsWith("37"))
+        ) {
+          result.innerHTML = "American Express.";
+        } else {
+          result.innerHTML = "Invalid card number";
+        }
+      }
+    </script>
+  </body>
+</html>
