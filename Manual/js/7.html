@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 7</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 50px;
+            text-align: center;
+        }
+        input{
+            padding: 10px;
+            width: 220px;
+            margin: 10px;
+        }
+        button{
+            padding:10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Find Day of your Birth.</h2>
+    <input type="date" id="dob"> <br><br>
+
+    <button onclick="findDay()">Find Day</button>
+
+    <script>
+        function findDay(){
+            let dob = document.getElementById("dob").value;
+
+            if(dob === ""){
+                alert("Enter valid DOB.");
+                return;
+            }
+
+            let date = new Date(dob);
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let day = days[date.getDay()];
+            alert("You were born on: " + day);
+        }
+    </script>
+</body>
+</html>
