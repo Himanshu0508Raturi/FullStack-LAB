@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 9</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input{
+            text-align: center;
+            padding: 10px;
+            width: 220px;
+            margin: 10px;
+        }
+        button{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Find Leftmost Vowel</h2>
+    <input type="text" id="str" placeholder="Enter a string">
+    <br><br>
+    <button onclick="findVowel()">Find Vowel Position</button>
+    <div id="result1"></div>
+    <hr>
+
+    <input type="number" id="num" placeholder="Enter a Number">
+    <br><br>
+    <button onclick="reverseNum()">Reverse the Number</button>
+    <div id="result2"></div>
+    <script>
+        function findVowel(){
+            let str = document.getElementById("str").value;
+            let pos = -1;
+
+            for(let i = 0 ; i < str.length ; i++){
+                if("aeiou".includes(str[i])){
+                    pos = i;
+                    break;
+                }
+            }
+            if(pos != -1){
+                document.getElementById("result1").innerHTML = pos + 1;
+            }else{
+                document.getElementById("result1").innerHTML = "Enter Valid String";
+            }
+        }
+
+        function reverseNum(){
+            let num = parseInt(document.getElementById("num").value);
+            let rev = 0;
+
+            while(num > 0){
+                let digit = num % 10;
+                rev = rev * 10 + digit;
+                num = Math.floor(num/10);
+            }
+            document.getElementById("result2").innerHTML = rev;
+        }
+    </script>
+</body>
+</html>

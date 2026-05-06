@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program 10</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+      }
+      button {
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Uppercase to lowercase and vise versa.</h2>
+
+    <input type="text" id="str" placeholder="Enter a string" />
+    <br /><br />
+    <button onclick="convert()">Convert</button>
+    <div id="res"></div>
+
+    <script>
+      function convert() {
+        let str = document.getElementById("str").value;
+        let result = "";
+        for (let i = 0; i < str.length; i++) {
+          if (str[i] >= "a" && str[i] <= "z") {
+            result += str[i].toUpperCase();
+          } else if (str[i] >= "A" && str[i] <= "Z") {
+            result += str[i].toLowerCase();
+          } else {
+            result += str[i];
+          }
+        }
+        document.getElementById("res").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Maruti Car Survey</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      select,
+      button {
+        padding: 10px;
+        margin: 10px;
+      }
+
+      table {
+        margin: auto;
+        border-collapse: collapse;
+        margin-top: 30px;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 12px;
+        width: 120px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Maruti Car Survey</h2>
+
+    <!-- City Selection -->
+    <select id="city">
+      <option value="">Select City</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Kolkata">Kolkata</option>
+    </select>
+
+    <!-- Car Model Selection -->
+    <select id="model">
+      <option value="">Select Model</option>
+      <option value="K10">Maruti-K10</option>
+      <option value="Zen">Zen-Astelo</option>
+      <option value="Wagnor">Wagnor</option>
+      <option value="SX4">Maruti-SX4</option>
+    </select>
+
+    <br />
+
+    <button onclick="addSurvey()">Add Survey</button>
+
+    <!-- Result Table -->
+    <table>
+      <tr>
+        <th>City</th>
+        <th>Maruti-K10</th>
+        <th>Zen-Astelo</th>
+        <th>Wagnor</th>
+        <th>Maruti-SX4</th>
+      </tr>
+
+      <tr>
+        <td>Delhi</td>
+        <td id="Delhi-K10">0</td>
+        <td id="Delhi-Zen">0</td>
+        <td id="Delhi-Wagnor">0</td>
+        <td id="Delhi-SX4">0</td>
+      </tr>
+
+      <tr>
+        <td>Mumbai</td>
+        <td id="Mumbai-K10">0</td>
+        <td id="Mumbai-Zen">0</td>
+        <td id="Mumbai-Wagnor">0</td>
+        <td id="Mumbai-SX4">0</td>
+      </tr>
+
+      <tr>
+        <td>Chennai</td>
+        <td id="Chennai-K10">0</td>
+        <td id="Chennai-Zen">0</td>
+        <td id="Chennai-Wagnor">0</td>
+        <td id="Chennai-SX4">0</td>
+      </tr>
+
+      <tr>
+        <td>Kolkata</td>
+        <td id="Kolkata-K10">0</td>
+        <td id="Kolkata-Zen">0</td>
+        <td id="Kolkata-Wagnor">0</td>
+        <td id="Kolkata-SX4">0</td>
+      </tr>
+    </table>
+
+    <script>
+      function addSurvey() {
+        let city = document.getElementById("city").value;
+        let model = document.getElementById("model").value;
+
+        // Validation
+        if (city === "" || model === "") {
+          alert("Please select city and model");
+          return;
+        }
+
+        // Generate cell ID
+        let cellId = city + "-" + model;
+
+        // Get current value
+        let cell = document.getElementById(cellId);
+
+        // Increase count
+        cell.innerHTML = parseInt(cell.innerHTML) + 1;
+      }
+    </script>
+  </body>
+</html>

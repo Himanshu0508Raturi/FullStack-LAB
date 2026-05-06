@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 8</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input{
+            text-align: center;
+            padding: 10px;
+            width: 220px;
+            margin: 10px;
+        }
+        button{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Telephone Number Parser.</h2>
+    <input type="text" id="phone" placeholder="Enter Telephone No.">
+    <br><br>
+
+    <button onclick="extractNumber()">Extract</button>
+    <br><br>
+
+    <label>Area Code:</label><br>
+    <input type="text" id="areaCode" readonly>
+
+    <br><br>
+    <label>Phone No:</label><br>
+    <input type="text" id="phoneNumber" readonly> 
+
+    <script>
+        function extractNumber(){
+            let phone = document.getElementById("phone").value;
+            let parts = phone.split(")");
+            let area = parts[0].replace("(" , "");
+            let no = parts[1];
+
+            document.getElementById("areaCode").value = area;
+            document.getElementById("phoneNumber").value = no;
+        }
+    </script>
+
+</body>
+</html>
