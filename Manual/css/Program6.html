@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Fixed Background Image</title>
+
+    <style>
+      body {
+        /* Background Image */
+        background-image: url("https://picsum.photos/1600/900");
+
+        /* Prevent repeating */
+        background-repeat: no-repeat;
+
+        /* Cover full screen */
+        background-size: cover;
+
+        /* FIXED Background */
+        background-attachment: fixed;
+
+        /* Center image */
+        background-position: center;
+
+        font-family: Arial;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .content {
+        padding: 50px;
+        height: 2000px; /* To enable scrolling */
+      }
+
+      h1 {
+        margin-top: 100px;
+        font-size: 50px;
+      }
+
+      p {
+        font-size: 22px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">
+      <h1>Fixed Background Demo</h1>
+
+      <p>Scroll the page and notice that the background image does not move.</p>
+
+      <p>The content scrolls while the background remains fixed.</p>
+    </div>
+  </body>
+</html>

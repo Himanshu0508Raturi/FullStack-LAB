@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Z-Index Demo</title>
+
+  <style>
+
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .container {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      margin: auto;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 200px;
+      text-align: center;
+    }
+
+    /* Lower z-index */
+    .box1 {
+      background-color: blue;
+      top: 50px;
+      left: 50px;
+      z-index: 1;
+    }
+
+    /* Higher z-index */
+    .box2 {
+      background-color: red;
+      top: 100px;
+      left: 120px;
+      z-index: 2;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h2>CSS Z-Index Demonstration</h2>
+
+<div class="container">
+
+  <div class="box box1">
+    Box 1
+  </div>
+
+  <div class="box box2">
+    Box 2
+  </div>
+
+</div>
+
+</body>
+</html>

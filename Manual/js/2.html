@@ -44,22 +44,21 @@
         let pass = document.getElementById("password").value.trim();
         let result = document.getElementById("result");
 
-        let nameregex = /^[A-Za-z]{2,}$/;
+        let nameregex = /^[a-zA-Z]+$/;
         if (!nameregex.test(name)) {
           result.innerHTML = "Invalid Name";
           result.className = "error";
           return;
         }
 
-        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let emailRegex = /^\S+@\S+\.\S+$/;
         if (!emailRegex.test(mail)) {
           result.innerHTML = "Invalid Email";
           result.className = "error";
           return;
         }
 
-        let passwordRegex =
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+        let passwordRegex = /^.{8,}$/;
         if (!passwordRegex.test(pass)) {
           result.innerHTML = "Invalid Password";
           result.className = "error";

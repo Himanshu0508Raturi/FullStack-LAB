@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position in CSS</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            color: rgb(5, 5, 5);
+
+        }
+        #static{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-top: 10px;
+            position: static;
+        }
+        #relative{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(221, 18, 69);
+            margin-top: 10px;
+            position: relative;
+            top: 10px ;
+        }
+        #parent{
+            border: 3px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(227, 141, 12);
+            margin-top: 10px;
+            position: relative;
+        }
+        #absolute{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(9, 247, 53);
+            margin-top: 10px;
+            position:absolute ;
+        }
+        #fixed{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(28, 28, 29);
+            margin-top: 10px;
+            position: fixed;
+        }
+        #sticky{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-top: 10px;
+            position: sticky;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div id="static"> Static </div>
+
+        <div id="relative">Relative</div>
+
+        <div id="parent">
+            <div id="absolute">Absolute</div>
+        </div>
+
+        <div id="fixed">Fixed</div>
+
+        hello
+        <br><br><br><br><br><br><br><br><br><br>
+        hio
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cumque temporibus dolorum? Quibusdam quaerat magnam est amet, pariatur veniam veritatis non odio ex expedita blanditiis reprehenderit iusto rem voluptates qui!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nam, ipsum a soluta rerum sit id, nemo aut magni reprehenderit accusantium aliquam ab tempore totam asperiores unde vero similique! Adipisci?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sunt pariatur nemo vel accusantium itaque esse est, nostrum error dolorem ipsam, quas voluptate corporis dicta rem maiores praesentium atque non?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, facere atque. Consequatur provident consequuntur explicabo aspernatur quasi inventore ratione vitae consectetur dolor aperiam reprehenderit rerum placeat, veniam, id iste facilis?
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, omnis! Qui vel velit repudiandae! Numquam, ad? Accusantium et velit debitis ipsum id! Aliquam recusandae aliquid deleniti in aut velit repellat?
+        <div id="sticky">Sticky</div>
+    </div>
+</body>
+</html>

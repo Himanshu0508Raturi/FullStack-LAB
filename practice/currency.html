@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Program for Practice</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                margin-top: 50px;
+            }
+            select,button{
+                padding: 10px;
+                margin: 5px;
+            }
+            .error{
+                color: red;
+            }
+            .success{
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Select Country and currency.</h2>
+        <select id="Country">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Japan">Japan</option>
+        </select>
+ 
+        <select id="Currency">
+            <option value="">Select Currency</option>
+            <option value="Rupee">Rupee</option>
+            <option value="Dollar">Dollar</option>
+            <option value="Yen">Yen</option>
+        </select> <br><br>
+        <button onclick="checkAns()">Check</button>
+        <div id="res"></div>
+        <script>
+            function checkAns(){
+                let country = document.getElementById("Country").value;
+                let currency = document.getElementById("Currency").value;
+                let res = document.getElementById("res");
+                if(country === "" || currency === ""){
+                    res.innerHTML = "Enter Valid Input";
+                    res.className = "error";
+                    return;
+                }
+                let data = {
+                    India : "Rupee",
+                    USA : "Dollar",
+                    Japan : "Yen"
+                };
+
+                if(data[country] === currency){
+                    res.innerHTML = "Correct Ans";
+                    res.className = "success";
+                    return;
+                }else{
+                    res.innerHTML = "Capital of " + country + " is " + data[country];
+                    res.className = "error";
+                    return;
+                }
+                return;
+            }
+        </script>
+    </body>
+</html>

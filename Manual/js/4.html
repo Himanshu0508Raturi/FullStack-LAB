@@ -72,6 +72,7 @@
           case "/":
             if (n2 === 0) {
               result.innerHTML = "Cannot divide by zero";
+              result.className = "error";
               return;
             }
             res = n1 / n2;

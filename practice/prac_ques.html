@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Vehicle Registration Validation</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      input {
+        padding: 10px;
+        width: 250px;
+        margin: 10px;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 20px;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      .success {
+        color: green;
+      }
+
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Vehicle Registration Number Validation</h2>
+
+    <input type="text" id="vehicle" placeholder="Enter Vehicle Number" />
+
+    <br /><br />
+
+    <button onclick="validateVehicle()">Validate</button>
+
+    <div id="result"></div>
+
+    <script>
+      function validateVehicle() {
+        let num = document.getElementById("vehicle").value.trim();
+
+        let result = document.getElementById("result");
+
+        // Private Car
+        // Example: DL01AB1234
+        let privateCar = /^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$/;
+
+        // Two Wheeler
+        // Example: UK071234
+        let twoWheeler = /^[A-Z]{2}[0-9]{2}[0-9]{4}$/;
+
+        // Commercial Vehicle
+        // Example: MH1212345
+        let commercial = /^[A-Z]{2}[0-9]{2}[0-9]{5}$/;
+
+        if (privateCar.test(num)) {
+          result.innerHTML = "Valid Private Car Number";
+
+          result.className = "success";
+        } else if (twoWheeler.test(num)) {
+          result.innerHTML = "Valid Two Wheeler Number";
+
+          result.className = "success";
+        } else if (commercial.test(num)) {
+          result.innerHTML = "Valid Commercial Vehicle Number";
+
+          result.className = "success";
+        } else {
+          result.innerHTML = "Invalid Vehicle Registration Number";
+
+          result.className = "error";
+        }
+      }
+    </script>
+  </body>
+</html>

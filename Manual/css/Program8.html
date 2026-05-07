@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Position Properties</title>
+
+  <style>
+
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .container {
+      height: 1500px;
+      padding: 20px;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      color: rgb(5, 5, 5);
+      text-align: center;
+      line-height: 100px;
+      margin: 20px;
+      font-weight: bold;
+    }
+
+    /* STATIC */
+    .static {
+      position: static;
+      background-color: gray;
+    }
+
+    /* RELATIVE */
+    .relative {
+      position: relative;
+      left: 50px;
+      top: 20px;
+      background-color: blue;
+    }
+
+    /* ABSOLUTE */
+    .parent {
+      position: relative;
+      height: 200px;
+      border: 2px solid black;
+      margin-top: 40px;
+    }
+
+    .absolute {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      background-color: red;
+    }
+
+    /* FIXED */
+    .fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: green;
+    }
+
+    /* STICKY */
+    .sticky {
+      position: sticky;
+      top: 0;
+      background-color: orange;
+      z-index: 1000;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h1>CSS Position Properties Demo</h1>
+
+<div class="container">
+
+  <!-- STATIC -->
+  <div class="box static">
+    Static Position
+  </div>
+
+  <!-- RELATIVE -->
+  <div class="box relative">
+    Relative Position
+  </div>
+
+  <!-- ABSOLUTE -->
+  <div class="parent">
+
+    <div class="box absolute">
+      Absolute Position
+    </div>
+
+  </div>
+
+  <!-- STICKY -->
+  <div class="box sticky">
+    Sticky Position
+  </div>
+
+  <p>
+    Scroll down to see fixed and sticky effects.
+  </p>
+
+  <br><br><br><br><br><br><br><br><br><br>
+
+  <!-- FIXED -->
+  <div class="box fixed">
+    Fixed Position
+  </div>
+
+</div>
+
+</body>
+</html>
